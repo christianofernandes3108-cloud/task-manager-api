@@ -1,113 +1,85 @@
 # Task Manager API
 
-A production-ready RESTful backend API built with Node.js, Express, and MongoDB. The service provides secure user authentication and full CRUD operations for managing tasks. Designed with clean architecture principles, modular components, and scalable best practices.
+## Overview
+A RESTful Task Manager API built using Node.js and Express, following MVC architecture principles. The API allows authenticated users to manage tasks securely with full CRUD functionality and role-based access control.
 
-## Features
+This project focuses on backend development best practices, authentication, and clean API design.
 
-### User Management
-- User registration and login
-- Password hashing with bcrypt
-- Secure, stateless authentication using JWT
-- Role-based and authenticated route protection
-
-### Task Management
-- Create, read, update, and delete tasks
-- User-specific task ownership
-- Query filters (e.g., completed, date filters)
-
-### Architecture & Code Quality
-- MVC folder structure (controllers, models, middleware, routes)
-- Reusable authentication middleware
-- Environment variable configuration using `.env`
-- Modular and maintainable codebase
+---
 
 ## Tech Stack
+- Node.js
+- Express
+- MongoDB
+- JSON Web Tokens (JWT)
 
-**Backend:** Node.js, Express  
-**Database:** MongoDB, Mongoose  
-**Auth:** JWT, bcrypt  
-**Utility:** dotenv, nodemon  
+---
 
-## Project Structure
+## Architecture
+- MVC (Model-View-Controller) architecture
+- RESTful API design
+- Environment-based configuration
+- Middleware for authentication and authorization
 
-```
-├── config/
-│   └── db.js
-├── controllers/
-│   ├── taskController.js
-│   └── userController.js
-├── middleware/
-│   └── authMiddleware.js
-├── models/
-│   ├── taskModel.js
-│   └── userModel.js
-├── routes/
-│   ├── taskRoutes.js
-│   └── userRoutes.js
-├── server.js
-└── package.json
-```
+---
 
-## Getting Started
+## Features
+- User registration and login
+- JWT-based authentication
+- Role-based access control
+- Create, read, update, and delete tasks
+- Secure API endpoints
 
-### 1. Clone the repository
+---
 
-```bash
-git clone https://github.com/your-username/task-manager-api.git
-cd task-manager-api
-```
+## API Endpoints
 
-### 2. Install dependencies
+Authentication:
+- POST /auth/register – Register a new user
+- POST /auth/login – Authenticate user and return JWT
 
-```bash
-npm install
-```
+Tasks:
+- GET /tasks – Retrieve all tasks for authenticated user
+- POST /tasks – Create a new task
+- PUT /tasks/:id – Update an existing task
+- DELETE /tasks/:id – Delete a task
 
-### 3. Create your `.env` file
+---
 
-```
-MONGO_URI=your_mongo_connection_string
-JWT_SECRET=your_jwt_secret
-PORT=5000
-```
+## Setup Instructions
 
-### 4. Run the server (development)
+Prerequisites:
+- Node.js installed
+- MongoDB installed or MongoDB Atlas account
 
-```bash
-npm run dev
-```
+Installation:
+1. Clone the repository:
+   git clone https://github.com/christianofernandes3108-cloud/task-manager-api.git
 
-### Run in production mode
+2. Navigate to the project directory:
+   cd task-manager-api
 
-```bash
-npm start
-```
+3. Install dependencies:
+   npm install
 
-## API Endpoints (Summary)
+4. Create a `.env` file with the following variables:
+   MONGO_URI=your_mongodb_connection_string  
+   JWT_SECRET=your_jwt_secret  
+   PORT=5000  
 
-### User
+5. Start the development server:
+   npm run dev
 
-| Method | Endpoint             | Description |
-|--------|-----------------------|-------------|
-| POST   | /api/users/register  | Create a new user |
-| POST   | /api/users/login     | Login user and return JWT |
-
-### Tasks
-
-| Method | Endpoint        | Description |
-|--------|------------------|-------------|
-| GET    | /api/tasks      | Get all tasks for logged-in user |
-| POST   | /api/tasks      | Create new task |
-| PATCH  | /api/tasks/:id  | Update task |
-| DELETE | /api/tasks/:id  | Delete task |
+---
 
 ## Future Improvements
+- Pagination and filtering
+- API testing with Jest
+- Task prioritization and due dates
+- Deployment to a cloud hosting platform
 
-- Add pagination and sorting
-- Swagger/OpenAPI documentation
-- Unit and integration tests
-- Deployment workflow with CI/CD
+---
 
-## License
-
-MIT License.
+## Author
+Christiano Fernandes  
+Junior Backend / Full-Stack Developer
